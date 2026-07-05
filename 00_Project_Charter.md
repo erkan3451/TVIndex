@@ -1,323 +1,282 @@
-# TVIndex Project Charter
+# 📺 TVIndex - Project Charter
 
-Version: 1.0
-Status: Draft
-Last Updated: July 2026
-
----
-
-# 1. Executive Summary
-
-TVIndex is an AI-powered television knowledge platform designed to collect, organize, analyze, and provide technical information related to televisions from manufacturers around the world.
-
-The platform automatically discovers technical resources including service manuals, firmware packages, schematic diagrams, training documents, technical bulletins, exploded views, spare parts catalogs, and engineering documentation. These resources are processed using advanced parsing technologies and artificial intelligence to build a comprehensive technical knowledge base.
-
-TVIndex is intended to become one of the world's largest searchable television repair databases.
-
-Unlike traditional document archives, TVIndex understands document content, extracts structured information, identifies relationships between electronic components, and assists technicians through AI-powered diagnostics.
+> Version: 1.0
+> Status: Active
+> Owner: NxisCompany
+> Project Name: TVIndex
 
 ---
 
-# 2. Problem Statement
+# 1. Project Overview
 
-Television repair information is highly fragmented across thousands of manufacturer websites, forums, cloud storage services, and independent repositories.
+TVIndex, televizyon tamircileri, teknik servisler ve elektronik teknisyenleri için geliştirilen kapsamlı bir bilgi, servis ve yapay zeka destekli teşhis platformudur.
 
-Technicians face several significant challenges:
+Amaç, televizyon tamiri sırasında ihtiyaç duyulan tüm teknik bilgileri tek bir sistem altında toplamak ve arıza tespit sürecini hızlandırmaktır.
 
-- Finding the correct service manual.
-- Locating firmware compatible with a specific panel.
-- Identifying board compatibility.
-- Understanding common failure patterns.
-- Searching across millions of PDF pages.
-- Matching alternative spare parts.
-- Diagnosing faults using incomplete symptoms.
+Platform;
 
-Current search engines are document-based rather than knowledge-based.
+- Televizyon modellerini
+- Anakartları
+- Panel bilgilerini
+- T-CON kartlarını
+- Power Board'ları
+- LED barları
+- Firmware dosyalarını
+- Servis menülerini
+- Teknik dökümanları
+- Arıza çözümlerini
+- AI destekli teşhis sistemini
 
-TVIndex aims to solve this problem by transforming unstructured technical documentation into structured knowledge.
-
----
-
-# 3. Vision
-
-To become the world's most comprehensive AI-powered television technical knowledge platform.
-
-TVIndex will enable technicians, service centers, researchers, and AI systems to retrieve accurate technical information within seconds instead of spending hours searching manually.
+tek bir veritabanında birleştirir.
 
 ---
 
-# 4. Mission
+# 2. Vision
 
-Our mission is to digitize, organize, and continuously expand television technical knowledge while leveraging artificial intelligence to improve repair efficiency worldwide.
+Dünyanın en büyük televizyon teknik bilgi veritabanını oluşturmak.
 
----
-
-# 5. Project Objectives
-
-The project has the following primary objectives:
-
-• Automatically discover technical resources from the Internet.
-
-• Download and archive millions of technical documents.
-
-• Parse PDF documents into structured information.
-
-• Build a semantic knowledge graph.
-
-• Enable natural language search.
-
-• Recommend similar television models.
-
-• Identify compatible electronic boards.
-
-• Predict possible hardware failures.
-
-• Support AI-assisted repair workflows.
-
-• Provide APIs for third-party integrations.
+Bir televizyon tamircisinin ihtiyaç duyabileceği her teknik bilgiye saniyeler içerisinde ulaşmasını sağlamak.
 
 ---
 
-# 6. Scope
+# 3. Mission
 
-The initial project scope includes:
+Teknik servis süreçlerini hızlandırmak.
 
-## Included
+Yanlış parça değişimini azaltmak.
 
-- Television models
-- LCD TVs
-- LED TVs
-- OLED TVs
-- QLED TVs
-- Mini LED TVs
-- Plasma TVs
-- CRT TVs
-- Smart TVs
-- Commercial Displays
-- Hospitality TVs
-- Medical Displays
-- Industrial Monitors
+Arıza teşhisini kolaylaştırmak.
 
-Supported document types:
+Teknisyenlerin bilgi paylaşımını artırmak.
 
-- Service Manuals
-- User Manuals
-- Schematics
-- Training Manuals
-- Technical Bulletins
-- Firmware Packages
-- Software Updates
-- EEPROM Dumps
-- Panel Datasheets
-- Mainboard Datasheets
-- T-CON Documentation
-- Power Board Documentation
-- Inverter Documentation
-- Parts Catalogs
-- Chassis Information
+Yapay zekâ ile desteklenen modern bir servis platformu oluşturmak.
 
 ---
 
-## Excluded (Phase 1)
+# 4. Primary Goals
 
-- Mobile devices
-- Smartphones
-- Tablets
-- Laptops
-- Cameras
-- Home appliances
-- Audio systems
-
-Future releases may expand beyond televisions.
-
----
-
-# 7. Stakeholders
-
-Primary stakeholders include:
-
-- Independent technicians
-- Authorized service centers
-- Television manufacturers
-- Electronics engineers
-- Spare parts suppliers
-- Technical trainers
-- AI researchers
-- Internal administrators
+- Tüm TV markalarını desteklemek
+- Milyonlarca televizyon modeli eklemek
+- Yüz binlerce elektronik kart kaydı oluşturmak
+- AI destekli arıza teşhis sistemi geliştirmek
+- Servis geçmişi oluşturmak
+- Parça eşleştirme sistemi kurmak
+- Teknik döküman arşivi oluşturmak
+- Firmware arşivi oluşturmak
+- Tamir rehberleri oluşturmak
+- Şema (Schematic) arşivi oluşturmak
 
 ---
 
-# 8. Success Criteria
+# 5. Target Users
 
-The project will be considered successful if it achieves the following milestones:
+## Independent Technicians
 
-- 1,000,000+ television models indexed.
-- 20,000,000+ technical documents processed.
-- 95% parser accuracy.
-- 90% OCR accuracy.
-- AI response latency below 5 seconds.
-- Knowledge Graph containing over 500 million relationships.
-- Search precision greater than 90%.
-- Automatic duplicate detection accuracy above 99%.
+Bağımsız televizyon tamircileri.
+
+## Technical Services
+
+Yetkili ve özel servisler.
+
+## Electronics Engineers
+
+Elektronik mühendisleri.
+
+## Hobbyists
+
+Elektronik tamir meraklıları.
+
+## Training Centers
+
+Meslek liseleri ve eğitim kurumları.
 
 ---
 
-# 9. Key Features
+# 6. Core Modules
 
-TVIndex consists of several major systems:
-
-- Discovery Engine
-- Download Engine
-- Parser Engine
-- OCR Engine
-- Image Analysis Engine
-- Knowledge Graph
-- AI Engine
-- Embedding Engine
-- Vector Search
-- OpenSearch Cluster
-- REST API
 - Dashboard
-- Security Layer
-
----
-
-# 10. High-Level Architecture
-
-```
-                Internet
-
-                    │
-
-        Discovery Engine
-
-                    │
-
-       Download Manager
-
-                    │
-
-          Document Storage
-
-                    │
-
-      PDF / OCR / Image Parser
-
-                    │
-
-      Structured Information
-
-                    │
-
-        Knowledge Graph
-
-          ↙          ↘
-
- Vector Database   OpenSearch
-
-          ↘          ↙
-
-          AI Engine (RAG)
-
-                │
-
-        REST API / Dashboard
-```
-
----
-
-# 11. Project Principles
-
-The platform follows these principles:
-
-- AI-first architecture.
-- Modular design.
-- Plugin-based crawling.
-- Scalable microservices.
-- Open API.
-- Cloud-native deployment.
-- Continuous indexing.
-- Security by design.
-- Extensibility.
-- High availability.
-
----
-
-# 12. Risks
-
-Potential project risks include:
-
-- Copyright restrictions.
-- Website structure changes.
-- Anti-bot protection.
-- Large storage requirements.
-- OCR inaccuracies.
-- Duplicate documents.
-- AI hallucinations.
-- Hardware compatibility ambiguity.
-- Long indexing time.
-
-Mitigation strategies will be defined in later documentation.
-
----
-
-# 13. Future Vision
-
-Future versions may include:
-
-- Board-level repair assistant.
-- Interactive circuit diagrams.
-- AI-generated repair procedures.
-- Voice assistant.
-- Mobile applications.
-- Offline AI mode.
-- Community knowledge contribution.
-- Automatic firmware verification.
-- Video tutorial indexing.
-- Real-time technician collaboration.
-
----
-
-# 14. Project Status
-
-Current Phase:
-
-Planning & Architecture
-
-Target MVP:
-
-- Discovery Engine
-- Downloader
-- PDF Parser
-- Knowledge Graph
-- OpenSearch
+- TV Database
+- Brand Database
+- Model Database
+- Mainboard Database
+- Panel Database
+- T-CON Database
+- Power Board Database
+- LED Backlight Database
+- Firmware Database
+- Service Menu Database
+- Error Code Database
+- Repair Database
+- AI Diagnosis
 - AI Chat
-- Dashboard
+- Component Database
+- Technical Documents
+- Service Records
+- Inventory
+- Part Sales
+- User Management
+- Reports
+- Settings
 
 ---
 
-# 15. Document References
+# 7. Supported Platforms
 
-Related documents:
-
-01_Vision.md
-
-02_Functional_Requirements.md
-
-03_Non_Functional_Requirements.md
-
-01_System_Architecture.md
-
-01_ER_Diagram.md
-
-01_LLM.md
-
-01_OpenSearch.md
-
-01_REST.md
-
-01_Dashboard.md
+- Web
+- Windows
+- Android
+- iOS (Future)
+- Linux (Future)
 
 ---
 
-End of Document
+# 8. Technologies
+
+Frontend
+- React
+- TypeScript
+
+Backend
+- ASP.NET Core Web API
+
+Database
+- PostgreSQL
+
+Cache
+- Redis
+
+Storage
+- Local Storage
+- Object Storage
+
+Search
+- Elasticsearch
+
+AI
+- Local LLM
+- OCR
+- Image Recognition
+
+Authentication
+- JWT
+- Refresh Token
+
+Hosting
+- Docker
+- Nginx
+
+---
+
+# 9. Long-Term Objectives
+
+- Dünya çapında televizyon veritabanı oluşturmak
+- AI destekli otomatik arıza teşhisi
+- Görselden kart tanıma
+- Görselden panel tanıma
+- Barkod ile ürün tanıma
+- QR destekli servis sistemi
+- Cloud senkronizasyon
+- Offline çalışma desteği
+- Çoklu dil desteği
+- API hizmeti
+- Mobil uygulamalar
+- Global teknik topluluk
+
+---
+
+# 10. Project Principles
+
+- Modüler mimari
+- Ölçeklenebilir yapı
+- Açık API
+- Yüksek performans
+- Güvenli kimlik doğrulama
+- Veri bütünlüğü
+- Kullanıcı odaklı tasarım
+- AI-first yaklaşımı
+- Kolay bakım
+- Sürekli geliştirilebilir yapı
+
+---
+
+# 11. Success Criteria
+
+- 100.000+ TV modeli
+- 50.000+ Anakart
+- 30.000+ Panel
+- 20.000+ Power Board
+- 15.000+ T-CON
+- 50.000+ Firmware
+- 100.000+ Arıza kaydı
+- AI teşhis doğruluğu %90+
+- Ortalama arama süresi < 1 saniye
+- %99.9 sistem erişilebilirliği
+
+---
+
+# 12. Future Expansion
+
+İlerleyen sürümlerde;
+
+- Klima
+- Monitör
+- Notebook
+- Projektör
+- Beyaz eşya
+- Endüstriyel elektronik
+
+gibi cihazlar da sisteme eklenebilir.
+
+---
+
+# 13. Repository Structure
+
+TVIndex/
+
+00_Project/
+01_Documentation/
+02_Backend/
+03_Frontend/
+04_AI/
+05_Database/
+06_DataCollection/
+07_Assets/
+08_Tools/
+09_Deployment/
+10_Testing/
+
+---
+
+# 14. Current Status
+
+Project Phase:
+Planning
+
+Architecture:
+In Design
+
+Database:
+Planning
+
+Frontend:
+Planning
+
+Backend:
+Planning
+
+AI:
+Research
+
+Data Collection:
+Planning
+
+Overall Progress:
+0%
+
+---
+
+# 15. License
+
+Copyright © NxisCompany
+
+All rights reserved.
