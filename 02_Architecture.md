@@ -1,81 +1,173 @@
-# TVIndex Architecture
+# TVIndex - 02_Architecture.md
 
-Version: 1.0
+Version: 1.0  
 Status: Draft
 
----
+## 1. Amaç
 
-# 1. Genel Bakış
+TVIndex; televizyon modelleri, elektronik kartlar, paneller, servis dökümanları,
+arıza bilgileri ve parça ilişkilerini tek bir bilgi platformunda toplayan modüler
+bir sistemdir.
 
-TVIndex;
+## 2. Tasarım İlkeleri
 
-- Televizyon modellerini keşfeden
-- Teknik dökümanları toplayan
-- PDF'leri analiz eden
-- Parça ilişkilerini çıkaran
-- Arızaları ilişkilendiren
-- API üzerinden sunan
+- Modüler Monolith
+- API First
+- Event Driven Jobs
+- Source Traceability
+- Versioned Data
+- Horizontal Scalability
+- AI Assisted Parsing
 
-merkezi bir bilgi platformudur.
+## 3. Üst Seviye Mimari
 
-TVIndex tek bir uygulama değildir.
+```text
+                 Web Dashboard
+                      │
+                 REST API
+                      │
+               Service Layer
+                      │
+ ┌────────────────────────────────────┐
+ │ Discovery │ Downloader │ Parser    │
+ │ Knowledge │ Search     │ AI        │
+ │ Images    │ Firmware   │ Import    │
+ └────────────────────────────────────┘
+                      │
+      PostgreSQL / Redis / OpenSearch
+                      │
+          Object Storage (PDF, Images)
+```
 
-TVIndex;
+## 4. Modüller
 
-Crawler +
-Parser +
-Knowledge Database +
-Search +
-AI
+### Discovery
+- Yeni model keşfi
+- Marka eklentileri
+- Kaynak takibi
+- Tekilleştirme
 
-sistemlerinin birleşimidir.
+### Downloader
+- Servis manual
+- Kullanım kılavuzu
+- Firmware
+- Görseller
 
----
+### Parser
+- PDF metni
+- Tablo çıkarımı
+- Parça tanıma
+- Metadata
 
-# 2. Mimari
+### Knowledge
+Merkezi ilişki katmanı.
 
-                    Dashboard
-                         │
-                  REST API / GraphQL
-                         │
-                Service Layer
-                         │
-──────────────────────────────────────────────
+İlişkiler:
+- Brand → Model
+- Model → Mainboard
+- Model → Panel
+- Model → Power Board
+- Model → T-CON
+- Model → LED Strip
+- Board → IC
+- IC → Datasheet
 
-Discovery Module
+### Search
+Desteklenen sorgular:
+- Model
+- Parça kodu
+- Panel
+- Şase
+- Arıza açıklaması
 
-Downloader Module
+### AI
+- PDF yorumlama
+- Eksik veri önerisi
+- Benzer model önerisi
+- Arıza olasılık analizi
 
-Parser Module
+## 5. Veri Akışı
 
-Knowledge Module
+1. Discovery model bulur.
+2. Kuyruğa eklenir.
+3. Downloader dosyaları indirir.
+4. Parser teknik bilgiyi çıkarır.
+5. Knowledge veritabanına işler.
+6. Search index güncellenir.
+7. AI ilişkileri güçlendirir.
 
-Search Module
+## 6. Queue Yapısı
 
-AI Module
+- discovery_queue
+- download_queue
+- parser_queue
+- image_queue
+- ai_queue
+- reindex_queue
 
-Image Module
+## 7. Depolama
 
-Firmware Module
+PostgreSQL:
+- İlişkisel veriler
 
-Fault Module
+Redis:
+- Cache
+- İş durumu
 
-Import / Export Module
+OpenSearch:
+- Tam metin arama
 
-──────────────────────────────────────────────
+Object Storage:
+- PDF
+- Görsel
+- Firmware
 
-PostgreSQL
+## 8. API İlkeleri
 
-OpenSearch
+- REST
+- JSON
+- JWT
+- Rate Limit
+- Pagination
 
-Redis
+Örnek:
 
-Object Storage
+GET /api/v1/models/LG/42LB580V
 
-──────────────────────────────────────────────
+## 9. Güvenlik
 
-Logs
+- HTTPS
+- JWT
+- API Key
+- Audit Log
+- Günlük yedek
 
-Backups
+## 10. Ölçeklenebilirlik
 
-Monitoring
+Başlangıç hedefi:
+- 100.000 model
+- 1.000.000 parça ilişkisi
+
+Mimari; yeni marka eklentileri ve yeni veri kaynaklarının kod tabanını bozmadan
+eklenebilmesini hedefler.
+
+## 11. Teknoloji
+
+- Python
+- FastAPI
+- SQLAlchemy
+- PostgreSQL
+- Redis
+- OpenSearch
+- Playwright
+- PyMuPDF
+- Docker
+
+## 12. Sonraki Doküman
+
+03_Database.md:
+- ER diyagramı
+- Tablo yapıları
+- İlişkiler
+- İndeks stratejileri
+- Veri bütünlüğü
