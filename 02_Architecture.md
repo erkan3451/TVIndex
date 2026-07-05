@@ -1,4 +1,4 @@
-# TVIndex - 02_Architecture.md
+# 02_Architecture.md
 
 Version: 1.0  
 Status: Draft
